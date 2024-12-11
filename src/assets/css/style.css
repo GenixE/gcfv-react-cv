@@ -213,6 +213,14 @@
   opacity: 1;
 }
 
+.collapsible-section {
+  display: none;
+}
+
+.collapsible-section:not(.collapsed) {
+  display: block;
+}
+
 #aboutContent {
   transition: all 0.4s ease-in-out;
   transform-origin: top;
@@ -497,7 +505,7 @@ body.light-mode .service-item:hover .fa-2x {
 
 .floating-options {
   position: fixed;
-  top: 75%;
+  top: 70%;
   right: 20px;
   transform: translateY(-50%);
   display: flex;
@@ -547,4 +555,40 @@ body.light-mode .newsletter {
 
 body.light-mode .contact {
   background-color: var(--lightgray) !important;
+}
+
+body.light-mode .countUp {
+  color: var(--green) !important;
+}
+
+body.light-mode .abtText {
+  color: var(--darkgray) !important;
+}
+
+/* Dark mode active button styles */
+body.dark-mode .floating-options .floating-btn.active {
+  background-color: var(--primary) !important;
+  color: var(--light) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 15px rgba(0, 184, 123, 0.3);
+  transform: scale(1.1);
+}
+
+/* Light mode active button styles */
+body.light-mode .floating-options .floating-btn.active {
+  background-color: var(--darkgray) !important;
+  color: var(--offwhite) !important;
+  border-color: var(--darkgray) !important;
+  box-shadow: 0 0 15px rgba(0, 184, 123, 0.2);
+  transform: scale(1.1);
+}
+
+/* Common active button styles */
+.floating-options .floating-btn.active {
+  position: relative;
+  z-index: 1001; /* Ensure active button appears above others */
+}
+
+.floating-options .floating-btn.active i {
+  color: var(--offwhite) !important;
 }

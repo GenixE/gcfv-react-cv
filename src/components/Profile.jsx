@@ -1,5 +1,6 @@
 import {Sidebar} from "./Sidebar.jsx";
 import {TypeAnimation} from "react-type-animation";
+import { Link } from 'react-router-dom';
 
 export function Profile() {
     return (
@@ -28,7 +29,7 @@ export function Profile() {
                         cursor={true}
                         repeat={Infinity}
                         style={{display: "inline-block", color: "lightgrey"}}
-                        className="text-light"
+                        className="text-light typed-text-output"
                     />
                 </div>
                 <div className="d-flex justify-content-center mt-auto mb-3">
@@ -73,9 +74,9 @@ export function Profile() {
                     >
                         Download CV
                     </a>
-                    <a href="#contact" className="btn w-50 btn-scroll nav-button">
+                    <Link to="/contact" className="btn w-50 btn-scroll nav-button">
                         Contact Me
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

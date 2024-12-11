@@ -14,6 +14,8 @@ import EducationData from "./data/education.json";
 import ServiceData from "./data/services.json";
 import LanguageData from "./data/languages.json";
 import {Contact} from "./components/Contact.jsx";
+import {Routes, Route, Navigate} from 'react-router-dom';
+import {Newsletter} from "./components/Newsletter.jsx";
 
 function App() {
     const [about, setAbout] = useState(null);
@@ -34,18 +36,21 @@ function App() {
 
     return (
         <>
-            {/*<Spinner />*/}
             <div className="container">
                 <div className="row g-5">
                     <Profile/>
                     <div className="col-lg-8">
-                        {about && <About data={about[0]}/>}
-                        <Skill data={skill}/>
-                        <Portfolio data={portfolio}/>
-                        <Education data={education}/>
-                        <Service data={service}/>
-                        <Language data={language}/>
-                        <Contact />
+                        <Routes>
+                            <Route path="/" element={<Navigate to="/about"/>}/>
+                            <Route path="/about" element={about && <About data={about[0]}/>}/>
+                            <Route path="/skills" element={<Skill data={skill}/>}/>
+                            <Route path="/portfolio" element={<Portfolio data={portfolio}/>}/>
+                            <Route path="/education" element={<Education data={education}/>}/>
+                            <Route path="/services" element={<Service data={service}/>}/>
+                            <Route path="/languages" element={<Language data={language}/>}/>
+                            <Route path="/newsletter" element={<Newsletter/>}/>
+                            <Route path="/contact" element={<Contact/>}/>
+                        </Routes>
                         <Footer/>
                     </div>
                 </div>

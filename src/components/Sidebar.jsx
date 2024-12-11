@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function Sidebar() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [language, setLanguage] = useState("English");
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    // Theme detection and management
     useEffect(() => {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         const systemPrefersDark = prefersDarkScheme.matches;
@@ -23,37 +27,78 @@ export function Sidebar() {
         setIsDarkMode((prevMode) => !prevMode);
     };
 
+    // Language management
     const toggleLanguage = () => {
         setLanguage((prevLanguage) => (prevLanguage === "English" ? "Spanish" : "English"));
     };
 
     useEffect(() => {
         const languageIcon = document.getElementById("languageIcon");
-        if (language === "English") {
-            languageIcon.src = "/img/en_flag_icon_round.webp";
-            languageIcon.alt = "English";
-        } else {
-            languageIcon.src = "/img/es_flag_icon_round.webp";
-            languageIcon.alt = "Spanish";
+        if (languageIcon) {
+            languageIcon.src = language === "English"
+                ? "/img/en_flag_icon_round.webp"
+                : "/img/es_flag_icon_round.webp";
+            languageIcon.alt = language;
         }
     }, [language]);
 
+    const navigationSections = [
+        { name: "about", icon: "fas fa-user", path: "/about" },
+        { name: "skills", icon: "fas fa-cogs", path: "/skills" },
+        { name: "portfolio", icon: "fas fa-briefcase", path: "/portfolio" },
+        { name: "education", icon: "fas fa-graduation-cap", path: "/education" },
+        { name: "services", icon: "fas fa-concierge-bell", path: "/services" },
+        { name: "languages", icon: "fas fa-language", path: "/languages" },
+        { name: "newsletter", icon: "fas fa-newspaper", path: "/newsletter" },
+        { name: "contact", icon: "fas fa-envelope", path: "/contact" }
+    ];
+
+    const handleNavigation = (path) => {
+        navigate(path);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <>
-            {/* Floating sidebar start */}
             <div className="floating-options">
-                <button className="btn btn-secondary floating-btn" id="languageToggle" onClick={toggleLanguage}>
+                {/* Language Toggle Button */}
+                <button
+                    className="btn btn-secondary floating-btn"
+                    id="languageToggle"
+                    onClick={toggleLanguage}
+                    title={`Switch to ${language === "English" ? "Spanish" : "English"}`}
+                >
                     <img
                         src="/img/en_flag_icon_round.webp"
-                        alt="English"
+                        alt={language}
                         id="languageIcon"
                     />
                 </button>
-                <button className="btn btn-secondary floating-btn" id="themeToggle" onClick={toggleTheme}>
+
+                {/* Theme Toggle Button */}
+                <button
+                    className="btn btn-secondary floating-btn"
+                    id="themeToggle"
+                    onClick={toggleTheme}
+                    title={`Switch to ${isDarkMode ? "Light" : "Dark"} Mode`}
+                >
                     <i className={`fas ${isDarkMode ? 'fa-moon' : 'fa-sun'}`} />
                 </button>
+
+                {/* Navigation Buttons */}
+                {navigationSections.map((section) => (
+                    <button
+                        key={section.name}
+                        className={`btn btn-secondary floating-btn ${
+                            location.pathname === section.path ? 'active' : ''
+                        }`}
+                        onClick={() => handleNavigation(section.path)}
+                        title={section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+                    >
+                        <i className={section.icon} />
+                    </button>
+                ))}
             </div>
-            {/* Floating sidebar end */}
         </>
     );
 }

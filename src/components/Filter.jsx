@@ -19,7 +19,6 @@ export function Filter({ data }) {
                 });
             });
 
-            // Set the "All" filter as active by default
             const defaultButton = document.querySelector('#portfolio-flters li[data-filter="*"]');
             if (defaultButton) {
                 defaultButton.classList.add('active');
@@ -29,6 +28,7 @@ export function Filter({ data }) {
 
         return () => clearTimeout(timeoutId);
     }, []);
+
 
     return (
         <div className="row">
