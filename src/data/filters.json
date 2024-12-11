@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "All",
+    "data_filter": "*",
+    "icon": "fa-star"
+  },
+  {
+    "id": 2,
+    "name": "Front End",
+    "data_filter": ".front-end",
+    "icon": "fa-laptop-code"
+  },
+  {
+    "id": 3,
+    "name": "Back End",
+    "data_filter": ".back-end",
+    "icon": "fa-server"
+  },
+  {
+    "id": 4,
+    "name": "Full Stack",
+    "data_filter": ".full-stack",
+    "icon": "fa-code"
+  },
+  {
+    "id": 5,
+    "name": "Mobile",
+    "data_filter": ".mobile",
+    "icon": "fa-mobile-alt"
+  },
+  {
+    "id": 6,
+    "name": "Design",
+    "data_filter": ".design",
+    "icon": "fa-paint-brush"
+  }
+]

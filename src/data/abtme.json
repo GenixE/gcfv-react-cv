@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Gian Carlo Valencia Ferry",
+    "age": 20,
+    "birthday": "August 31, 2004",
+    "location": "Palma de Mallorca",
+    "email": "pubgcfv@gmail.com",
+    "phone": "+34 675 62 10 75",
+    "degree": "Grado Superior",
+    "level": "Learning",
+    "freelance": "Available",
+    "description": "Born in the Philippines, raised in Spain. I am a student in IES Emili Darder, currently studying 2a Desarrollo de Aplicaciones Web. I like to learn new things, especially in the field of technology. I am a Web  Developer, and Freelancer. I like helping people to solve their problems, especially in computer stuff. I have passion building PCs, play video games time to time. I want to be a Professional Web Developer in the future.",
+    "experience": 400,
+    "projects": 6
+  }
+]

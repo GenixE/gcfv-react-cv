@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "language": "Laravel",
+    "icon": "fab fa-laravel",
+    "percentage": 50
+  },
+  {
+    "id": 2,
+    "language": "Java",
+    "icon": "fab fa-java",
+    "percentage": 75
+  },
+  {
+    "id": 3,
+    "language": "PHP",
+    "icon": "fab fa-php",
+    "percentage": 80
+  },
+  {
+    "id": 4,
+    "language": "React",
+    "icon": "fab fa-react",
+    "percentage": 40
+  },
+  {
+    "id": 5,
+    "language": "Bootstrap",
+    "icon": "fab fa-bootstrap",
+    "percentage": 90
+  },
+  {
+    "id": 6,
+    "language": "Javascript",
+    "icon": "fab fa-js-square",
+    "percentage": 50
+  },
+  {
+    "id": 7,
+    "language": "HTML/CSS",
+    "icon": "fab fa-html5",
+    "percentage": 100
+  },
+  {
+    "id": 8,
+    "language": "MySQL",
+    "icon": "fa-solid fa-database",
+    "percentage": 90
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Web Development",
+    "icon": "fas fa-2x fa-code mx-auto mb-4",
+    "desc": "Experienced in creating responsive websites using modern frameworks like Laravel, React, Bootstrap. Focused on delivering clean, efficient, and user-friendly web solutions."
+  },
+  {
+    "id": 2,
+    "name": "IT / Computer Technician",
+    "icon": "fas fa-2x fa-desktop mx-auto mb-4",
+    "desc": "Skilled in hardware and software maintenance, system upgrades, and network configuration. Certified in computer systems and networking through formal education at Aula Balear."
+  },
+  {
+    "id": 3,
+    "name": "IT / Tech Support",
+    "icon": "fas fa-2x fa-headset mx-auto mb-4",
+    "desc": "Providing comprehensive technical support and troubleshooting for both hardware and software issues. Experienced in resolving user inquiries and maintaining system functionality through."
+  },
+  {
+    "id": 4,
+    "name": "Video Editing",
+    "icon": "fas fa-2x fa-video mx-auto mb-4",
+    "desc": "Creating engaging video content with DaVinci Resolve. Experienced in post-production, effects application, and delivering high-quality video outputs for various purposes."
+  }
+
+]

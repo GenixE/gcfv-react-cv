@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "category": "front-end mobile design",
+    "project_name": "Bootstrap CV",
+    "images": [
+      "/img/bootstrap-cv-mac.webp",
+      "/img/bootstrap-cv-iphone.webp"
+    ],
+    "repository": "https://github.com/GenixE/gcfv-bootstrap-cv",
+    "languages": [
+      {
+        "icon": "fab fa-bootstrap",
+        "name": "Bootstrap"
+      },
+      {
+        "icon": "fab fa-html5",
+        "name": "HTML5"
+      },
+      {
+        "icon": "fab fa-css3",
+        "name": "CSS3"
+      },
+      {
+        "icon": "fab fa-js-square",
+        "name": "JavaScript"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "full-stack back-end",
+    "project_name": "PHP Dashboard",
+    "images": [
+      "/img/php-dashboard-mac.webp"
+    ],
+    "repository": "https://github.com/GenixE/gcfv-php-dashboard",
+    "languages": [
+      {
+        "icon": "fab fa-bootstrap",
+        "name": "Bootstrap"
+      },
+      {
+        "icon": "fab fa-js-square",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "fab fa-php",
+        "name": "PHP"
+      },
+      {
+        "icon": "fa-solid fa-database",
+        "name": "MySQL"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "front-end",
+    "project_name": "Coming Soon",
+    "images": [
+      "/img/coming-soon.webp"
+    ],
+    "repository": "https://github.com/GenixE/gcfv-react-cv",
+    "languages": [
+      {
+        "icon": "fab fa-bootstrap",
+        "name": "Bootstrap"
+      },
+      {
+        "icon": "fab fa-react",
+        "name": "React"
+      },
+      {
+        "icon": "fab fa-js-square",
+        "name": "JavaScript"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "front-end",
+    "project_name": "React Netflix Cards",
+    "images": [
+      "/img/react-netflix.webp"
+    ],
+    "repository": "../public/img/react-netflix.webp",
+    "languages": [
+      {
+        "icon": "fab fa-react",
+        "name": "React"
+      },
+      {
+        "icon": "fab fa-js-square",
+        "name": "JavaScript"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "back-end",
+    "project_name": "Java Boletín",
+    "images": [
+      "/img/java-boletin.webp"
+    ],
+    "repository": "https://github.com/GenixE/gcfv-java-boletin",
+    "languages": [
+      {
+        "icon": "fab fa-java",
+        "name": "Java"
+      },
+      {
+        "icon": "fa-solid fa-window-maximize",
+        "name": "JFrame"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "front-end",
+    "project_name": "Java Cartelera de Cines",
+    "images": [
+      "/img/js-cartelera.webp"
+    ],
+    "repository": "https://github.com/GenixE/gcfv-js-cartelera",
+    "languages": [
+      {
+        "icon": "fab fa-js-square",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "fab fa-css3",
+        "name": "CSS"
+      }
+    ]
+  }
+]

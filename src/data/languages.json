@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Tagalog",
+    "fluency": 100,
+    "bar-color": "progress-bar bg-primary"
+  },
+  {
+    "id": 2,
+    "name": "English",
+    "fluency": 90,
+    "bar-color": "progress-bar bg-info"
+  },
+  {
+    "id": 3,
+    "name": "Spanish",
+    "fluency": 80,
+    "bar-color": "progress-bar bg-success"
+  },
+  {
+    "id": 4,
+    "name": "Ilocano",
+    "fluency": 50,
+    "bar-color": "progress-bar bg-warning"
+  },
+  {
+    "id": 5,
+    "name": "Catalan",
+    "fluency": 40,
+    "bar-color": "progress-bar bg-danger"
+  }
+]

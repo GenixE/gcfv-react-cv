@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "course": "2a Grado Superior | Desarrollo de Aplicaciones Web",
+    "school": "IES Emili Darder",
+    "sy": "2024 - 2025",
+    "desc": "This is my current course, I am studying Web Development. I am learning new things about web development.",
+    "link": "https://www.iesemilidarder.com"
+  },
+  {
+    "id": 2,
+    "course": "1a Grado Superior | Desarrollo de Aplicaciones Web",
+    "school": "IES Son Ferrer",
+    "sy": "2023 - 2024",
+    "desc": "This was my first course in Grado Superior, I learned a lot of things specially programming concepts and building an application.",
+    "link": "https://www.iessonferrer.net/"
+  },
+  {
+    "id": 3,
+    "course": "Grado Medio | Sistemas Microinformáticos y Redes",
+    "school": "Aula Balear",
+    "sy": "2021 - 2023",
+    "desc": "This was my first course in Grado Medio, I learned a lot of things specially hardware and software maintenance. I went through a 400 hours of internship in a solutions company as a part of my course.",
+    "link": "https://www.aulabalear.org/"
+  },
+
+  {
+    "id": 4,
+    "course": "Educación Secundaria Obligatoria",
+    "school": "FECIB Sagrat Cor",
+    "sy": "2016 - 2020",
+    "desc": "This were my high school years, I learned Spanish and Catalan language. I also learned their culture and history.",
+    "link": "https://sagratcor.fecib.net/"
+  }
+]
