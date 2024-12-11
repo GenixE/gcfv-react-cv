@@ -1,34 +1,26 @@
 import { useEffect } from 'react';
-import Isotope from 'isotope-layout';
 
-export function Filter({ data }) {
+export function Filter({ data, isotopeInstance }) {
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            const portfolioIsotope = new Isotope('.portfolio-container', {
-                itemSelector: '.portfolio-item',
-                layoutMode: 'fitRows',
-            });
-
+        if (isotopeInstance) {
             const filterButtons = document.querySelectorAll('#portfolio-flters li');
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    portfolioIsotope.arrange({ filter: this.getAttribute('data-filter') });
+                    if (!this.classList.contains('active')) {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        isotopeInstance.arrange({ filter: this.getAttribute('data-filter') });
+                    }
                 });
             });
 
             const defaultButton = document.querySelector('#portfolio-flters li[data-filter="*"]');
             if (defaultButton) {
                 defaultButton.classList.add('active');
-                portfolioIsotope.arrange({ filter: '*' });
+                isotopeInstance.arrange({ filter: '*' });
             }
-        }, 0);
-
-        return () => clearTimeout(timeoutId);
-    }, []);
-
+        }
+    }, [isotopeInstance]);
 
     return (
         <div className="row">
@@ -39,7 +31,7 @@ export function Filter({ data }) {
                             key={filter.id}
                             className="btn btn-secondary"
                             data-filter={filter.data_filter}
-                            style={{ margin: '5px' }} // Add margin to create space between buttons
+                            style={{ margin: '5px' }}
                         >
                             <i className={`fa ${filter.icon} me-2`} />
                             {filter.name}

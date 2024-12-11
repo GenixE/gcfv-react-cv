@@ -7,7 +7,6 @@ export function Sidebar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Theme detection and management
     useEffect(() => {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         const systemPrefersDark = prefersDarkScheme.matches;
@@ -27,20 +26,9 @@ export function Sidebar() {
         setIsDarkMode((prevMode) => !prevMode);
     };
 
-    // Language management
     const toggleLanguage = () => {
         setLanguage((prevLanguage) => (prevLanguage === "English" ? "Spanish" : "English"));
     };
-
-    useEffect(() => {
-        const languageIcon = document.getElementById("languageIcon");
-        if (languageIcon) {
-            languageIcon.src = language === "English"
-                ? "/img/en_flag_icon_round.webp"
-                : "/img/es_flag_icon_round.webp";
-            languageIcon.alt = language;
-        }
-    }, [language]);
 
     const navigationSections = [
         { name: "about", icon: "fas fa-user", path: "/about" },
@@ -61,7 +49,6 @@ export function Sidebar() {
     return (
         <>
             <div className="floating-options">
-                {/* Language Toggle Button */}
                 <button
                     className="btn btn-secondary floating-btn"
                     id="languageToggle"
@@ -69,13 +56,12 @@ export function Sidebar() {
                     title={`Switch to ${language === "English" ? "Spanish" : "English"}`}
                 >
                     <img
-                        src="/img/en_flag_icon_round.webp"
+                        src={language === "English" ? "/img/en_flag_icon_round.webp" : "/img/es_flag_icon_round.webp"}
                         alt={language}
                         id="languageIcon"
                     />
                 </button>
 
-                {/* Theme Toggle Button */}
                 <button
                     className="btn btn-secondary floating-btn"
                     id="themeToggle"
@@ -85,7 +71,6 @@ export function Sidebar() {
                     <i className={`fas ${isDarkMode ? 'fa-moon' : 'fa-sun'}`} />
                 </button>
 
-                {/* Navigation Buttons */}
                 {navigationSections.map((section) => (
                     <button
                         key={section.name}

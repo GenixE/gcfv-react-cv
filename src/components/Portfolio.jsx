@@ -1,10 +1,10 @@
-import {useEffect, useState} from "react";
-import {Filter} from "./Filter.jsx";
+import { useEffect, useState } from "react";
+import { Filter } from "./Filter.jsx";
 import FilterData from "../data/filters.json";
 import Isotope from 'isotope-layout';
-import {CollapsibleSection} from './CollapsibleSection';
+import { CollapsibleSection } from './CollapsibleSection';
 
-export function Portfolio({data}) {
+export function Portfolio({ data }) {
     const [filters, setFilters] = useState([]);
     const [portfolioIsotope, setPortfolioIsotope] = useState(null);
 
@@ -14,35 +14,24 @@ export function Portfolio({data}) {
 
     // Initialize Isotope when the component mounts or when data changes
     useEffect(() => {
+        let iso;
         if (document.querySelector('.portfolio-container')) {
-            const iso = new Isotope('.portfolio-container', {
+            iso = new Isotope('.portfolio-container', {
                 itemSelector: '.portfolio-item',
                 layoutMode: 'fitRows',
                 transitionDuration: '0.8s',
             });
-
-            const filterButtons = document.querySelectorAll('#portfolio-flters li');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    const filterValue = this.getAttribute('data-filter');
-                    iso.arrange({ filter: filterValue });
-                });
-            });
-
             setPortfolioIsotope(iso);
         }
 
         return () => {
-            if (portfolioIsotope) {
-                portfolioIsotope.destroy();
+            if (iso) {
+                iso.destroy();
             }
         };
     }, [data]);
 
-
-    const Slideshow = ({images}) => {
+    const Slideshow = ({ images }) => {
         const [currentIndex, setCurrentIndex] = useState(0);
         const [opacity, setOpacity] = useState(0);
 
@@ -78,14 +67,14 @@ export function Portfolio({data}) {
     const portfolioContent = (
         <div className="row">
             <div className="col-12">
-                <Filter data={filters}/>
+                <Filter data={filters} isotopeInstance={portfolioIsotope} />
                 <div className="row portfolio-container">
                     {data.map(item => (
                         <div key={item.id} className={`col-md-6 mb-4 portfolio-item ${item.category}`}>
                             <h3 className="project-name">{item.project_name}</h3>
                             <div className="position-relative overflow-hidden mb-2">
                                 {item.images.length > 1 ? (
-                                    <Slideshow images={item.images}/>
+                                    <Slideshow images={item.images} />
                                 ) : (
                                     <img
                                         className="img-fluid w-100"
@@ -95,7 +84,7 @@ export function Portfolio({data}) {
                                 )}
                                 <div className="portfolio-btn d-flex align-items-center justify-content-center">
                                     <a href={item.repository} target="_blank" rel="noopener noreferrer">
-                                        <i className="fa fa-eye"/>
+                                        <i className="fa fa-eye" />
                                     </a>
                                 </div>
                             </div>
@@ -128,7 +117,6 @@ export function Portfolio({data}) {
             defaultOpen={true}
             id="portfolio"
             onToggle={(isOpen) => {
-                // Re-initialize Isotope when section is opened
                 if (isOpen && !portfolioIsotope) {
                     const iso = new Isotope('.portfolio-container', {
                         itemSelector: '.portfolio-item',
